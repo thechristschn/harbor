@@ -424,7 +424,7 @@ func (session *Session) searchGroup(groupDN, filter, gName, groupNameAttribute s
 		groupName = result.Entries[0].Attributes[0].Values[0]
 	}
 	group := models.LdapGroup{
-		GroupDN:   result.Entries[0].DN,
+		GroupDN:   groupDN,
 		GroupName: groupName,
 	}
 	ldapGroups = append(ldapGroups, group)
