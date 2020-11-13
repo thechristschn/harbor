@@ -112,7 +112,7 @@ func (l *Auth) attachLDAPGroup(ldapUsers []models.LdapUser, u *models.User, sess
 	}
 	userGroups := make([]models.UserGroup, 0)
 	for _, dn := range ldapUsers[0].GroupDNList {
-		lGroups, err := sess.SearchGroupByDN(dn)
+		lGroups, err := sess.SearchGroupByName(dn)
 		if err != nil {
 			log.Warningf("Can not get the ldap group name with DN %v, error %v", dn, err)
 			continue

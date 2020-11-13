@@ -163,8 +163,8 @@ func onBoardCommonUserGroup(g *models.UserGroup, keyAttribute string, combinedKe
 // OnBoardUserGroup will check if a usergroup exists in usergroup table, if not insert the usergroup and
 // put the id in the pointer of usergroup model, if it does exist, return the usergroup's profile.
 func OnBoardUserGroup(g *models.UserGroup) error {
-	if g.GroupType == common.LDAPGroupType {
-		return onBoardCommonUserGroup(g, "LdapGroupDN", "GroupType")
-	}
+	// if g.GroupType == common.LDAPGroupType {
+	// 	return onBoardCommonUserGroup(g, "LdapGroupDN", "GroupType")
+	// }
 	return onBoardCommonUserGroup(g, "GroupName", "GroupType")
 }
